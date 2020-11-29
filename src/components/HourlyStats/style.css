@@ -1,0 +1,45 @@
+.hourly-stats {
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hourly-stats>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 60%;
+    width: 30%;
+    background: #5E237D
+}
+
+.hourly-stats>.upload {
+    background: linear-gradient(180deg, #331A30 0%, #381D3C 100%);
+}
+
+.hourly-stats>div>.hour {
+    font-size: 16px;
+    color: #716A74;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.hourly-stats>div>.hour>img {
+    width: 24px;
+    height: 24px;
+}
+
+.hourly-stats>div>.value {
+    font-size: 56px;
+    color: #FFF;
+}
+
+.hourly-stats>div>.value>span {
+    font-size: 16px;
+    color: #716A74;
+}

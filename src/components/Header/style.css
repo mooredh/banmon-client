@@ -1,0 +1,28 @@
+.header {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+}
+
+.header>section {
+    width: 50%;
+    background-color: #371D3B;
+    color: #636363;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all ease-in-out 200ms;
+}
+
+.header>section:hover {
+    background-color: #833891;
+    color: #f8f8f8;
+}
+
+.header>section.active {
+    background-color: #5E237D;
+    color: #FFFFFF;
+}

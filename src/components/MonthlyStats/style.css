@@ -1,0 +1,48 @@
+.monthly-stats {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.monthly-stats>.date {
+    color: #636363;
+    font-size: 30px;
+}
+
+.monthly-stats>.download {
+    font-size: 56px;
+    color: #FFF;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.monthly-stats>.download>span {
+    font-size: 16px;
+    color: #636363;
+}
+
+.monthly-stats>.download>img {
+    width: 46px;
+    height: 46px;
+}
+
+.monthly-stats>.upload {
+    font-size: 30px;
+    color: #FFF;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.monthly-stats>.upload>span {
+    font-size: 14px;
+    color: #636363;
+}
+
+.monthly-stats>.upload>img {
+    width: 24px;
+    height: 24px;
+}
