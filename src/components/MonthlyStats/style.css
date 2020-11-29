@@ -9,6 +9,7 @@
 .monthly-stats>.date {
     color: #636363;
     font-size: 30px;
+    text-transform: uppercase;
 }
 
 .monthly-stats>.download {

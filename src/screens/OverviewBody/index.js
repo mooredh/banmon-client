@@ -3,11 +3,11 @@ import MonthlyStats from '../../components/MonthlyStats';
 import HourlyStats from '../../components/HourlyStats';
 import './style.css';
 
-export default function OverviewBody() {
+export default function OverviewBody({ bandwidth }) {
     return (
         <div className="overview">
-            <MonthlyStats />
-            <HourlyStats />
+            <MonthlyStats bandwidth={bandwidth} />
+            <HourlyStats bandwidth={bandwidth} />
         </div>
     )
 }
