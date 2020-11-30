@@ -5,18 +5,22 @@ import Loader from '../Loader';
 import OverviewBody from '../OverviewBody';
 import './style.css';
 
-const API_URL = 'https://banmon.herokuapp.com/api/v1/bandwidth';
+const API_URL = 'https://banmon.herokuapp.com/api/v1/bandwidth/overview';
 
 export default function MainScreen() {
     const [activeTab, setActiveTab] = useState('overview');
     const [isLoading, setIsLoading] = useState(false);
-    const [bandwidth, setBandwidth] = useState([]);
+    const [overviewData, setOverviewData] = useState({
+        monthlyStats: [0, 0],
+        hourlyStats: [0, 0],
+        dateRange: ''
+    });
 
     useEffect(() => {
-        getBandwidth();
+        getOverviewData();
     }, []);
 
-    const getBandwidth = async () => {
+    const getOverviewData = async () => {
         setIsLoading(true);
         try {
             const res = await fetch(API_URL, {
@@ -28,9 +32,9 @@ export default function MainScreen() {
 
             const resJson = await res.json();
 
-            if (res.status !== 200 || !resJson.bandwidthDays) throw new Error(resJson.message);
+            if (res.status !== 200 || !resJson.data) throw new Error(resJson.message);
 
-            setBandwidth(resJson.bandwidthDays);
+            setOverviewData({ ...resJson.data });
 
             console.log(resJson);
         } catch (error) {
@@ -43,7 +47,7 @@ export default function MainScreen() {
     return (
         <div className="container">
             <Header activeTab={activeTab} setActiveTab={setActiveTab} />
-            {(isLoading && bandwidth.length) ? <Loader /> : (activeTab === 'overview' ? <OverviewBody bandwidth={bandwidth} /> : <CalendarBody bandwidth={bandwidth} />)}
+            {isLoading ? <Loader /> : (activeTab === 'overview' ? <OverviewBody overviewData={overviewData} /> : <CalendarBody />)}
         </div>
     )
 }
