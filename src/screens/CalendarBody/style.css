@@ -1,3 +1,106 @@
 .calendar {
     height: 90%;
 }
+
+.calendar>.month-year {
+    color: #FFF;
+    font-size: 28px;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: normal;
+}
+
+.calendar>.month-year>.year {
+    font-size: 18px;
+    transition: all 250ms ease-in-out;
+}
+
+.calendar>.month-year>.month {
+    transition: all 250ms ease-in-out;
+}
+
+.calendar>.month-year>.year:hover, .calendar>.month-year>.month:hover {
+    cursor: pointer;
+    color: #888;
+}
+
+.calendar>.cal-caret {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 90%;
+}
+
+.calendar>.cal-caret>img:hover {
+    cursor: pointer;
+}
+
+.calendar>.cal-caret>.calendar-body {
+    background-color: #371D3B;
+    height: 90%;
+    width: 1200px;
+    border-right: #888 1px solid;
+    border-top: #888 1px solid;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar>.cal-caret>.calendar-body>.cal-head {
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    border-left: #888 1px solid;
+    border-bottom: #888 1px solid;
+    color: #FFF;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.calendar>.cal-caret>.calendar-body>.cal-head>div {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 10px;
+}
+
+.calendar>.cal-caret>.calendar-body>.cal-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.calendar>.cal-caret>.calendar-body>.cal-grid>.cell {
+    border-left: #888 1px solid;
+    border-bottom: #888 1px solid;
+    transition: all 250ms ease-in-out;
+    color: #FFF;
+    font-weight: normal;
+    font-size: 20px;
+    display: flex;
+}
+
+.calendar>.cal-caret>.calendar-body>.cal-grid>.cell.disabled {
+    color: #666;
+}
+
+.calendar>.cal-caret>.calendar-body>.cal-grid>.cell.today {
+    color: #FFD700;
+}
+
+.calendar>.cal-caret>.calendar-body>.cal-grid>.cell:hover {
+    background: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+}
+
+.calendar>.cal-caret>.calendar-body>.cal-grid>.cell>.date-number {
+    width: 100%;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: flex-end;
+}

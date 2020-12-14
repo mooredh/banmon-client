@@ -15,7 +15,7 @@ export default function HourlyStats({ hourlyStats: stats }) {
                 <div className="value">{formattedDown[0]}&nbsp;<span>{formattedDown[1]}</span></div>
             </div>
             <div className="upload">
-                <div className="hour"><img src={upArrow} alt="Down Arrow" />&nbsp;HOUR</div>
+                <div className="hour"><img src={upArrow} alt="Up Arrow" />&nbsp;HOUR</div>
                 <div className="value">{formattedUp[0]}&nbsp;<span>{formattedUp[1]}</span></div>
             </div>
         </section>
