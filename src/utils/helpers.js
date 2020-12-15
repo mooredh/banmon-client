@@ -51,7 +51,6 @@ export function getDaysArray(month, year) {
     }
 
     for (let i = 1 ; i <= 42 - lastDay.getDate() - firstDay.getDay(); i++) {
-        console.log(i);
         daysArr[i + lastDay.getDate() + firstDay.getDay() - 1] = {
             date: new Date(year, month + 1, i),
             number: i,
@@ -59,9 +58,11 @@ export function getDaysArray(month, year) {
         }
     }
 
-    console.log(daysArr);
-
     return daysArr
+}
+
+export function range(start, end) {
+    return Array(end - start + 1).fill().map((_, idx) => start + idx);
 }
 
 export const monthsInYear = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
